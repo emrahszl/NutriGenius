@@ -19,6 +19,7 @@ namespace NutriGenius.Data.Entities.Classes
 
         private string _password = null!;
 
+        private DateTime _birthDate;
 
         public int Id { get; set; }
 
@@ -30,10 +31,15 @@ namespace NutriGenius.Data.Entities.Classes
 
             set 
             {
-                if (value.Length < 8 || !(value.Any(x => Char.IsUpper(x)) && value.Any(x => Char.IsLower(x))))
+                if (value.Length < 60)
                 {
-                    throw new PasswordException();
+                    if (value.Length < 8 || !(value.Any(x => Char.IsUpper(x)) && value.Any(x => Char.IsLower(x))))
+                    {
+                        throw new PasswordException();
+                    }
                 }
+                
+                _password = value;
             }
         }
 
@@ -41,7 +47,18 @@ namespace NutriGenius.Data.Entities.Classes
 
         public string LastName { get; set; } = null!;
 
-        public DateTime BirthDate { get; set; }
+        public DateTime BirthDate 
+        { 
+            get => _birthDate;
+
+            set 
+            { 
+                if ((DateTime.Now.Year - value.Year) < 15)
+                {
+                    throw new AgeException();
+                }
+            } 
+        }
 
         public Gender Gender { get; set; }
 

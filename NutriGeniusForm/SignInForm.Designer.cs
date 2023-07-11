@@ -100,6 +100,7 @@
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(207, 23);
             dtpBirthDate.TabIndex = 2;
+            dtpBirthDate.Value = new DateTime(1993, 1, 4, 0, 0, 0, 0);
             // 
             // txtUserName
             // 
@@ -113,6 +114,7 @@
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Location = new Point(537, 463);
+            txtPassword.MaxLength = 50;
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(207, 23);
             txtPassword.TabIndex = 3;
@@ -159,9 +161,9 @@
             label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location = new Point(352, 500);
             label3.Name = "label3";
-            label3.Size = new Size(89, 25);
+            label3.Size = new Size(115, 25);
             label3.TabIndex = 0;
-            label3.Text = "Boy (*) : ";
+            label3.Text = "Boy (cm*) : ";
             // 
             // label4
             // 
@@ -170,9 +172,9 @@
             label4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(352, 539);
             label4.Name = "label4";
-            label4.Size = new Size(89, 25);
+            label4.Size = new Size(112, 25);
             label4.TabIndex = 0;
-            label4.Text = "Kilo (*) : ";
+            label4.Text = "Kilo (kg*) : ";
             // 
             // label5
             // 
