@@ -63,7 +63,7 @@
             // txtFirstName
             // 
             txtFirstName.BorderStyle = BorderStyle.FixedSingle;
-            txtFirstName.Location = new Point(441, 211);
+            txtFirstName.Location = new Point(441, 212);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(207, 23);
             txtFirstName.TabIndex = 1;
@@ -71,7 +71,7 @@
             // txtLastName
             // 
             txtLastName.BorderStyle = BorderStyle.FixedSingle;
-            txtLastName.Location = new Point(441, 250);
+            txtLastName.Location = new Point(441, 251);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(207, 23);
             txtLastName.TabIndex = 1;
@@ -79,7 +79,7 @@
             // txtHeight
             // 
             txtHeight.BorderStyle = BorderStyle.FixedSingle;
-            txtHeight.Location = new Point(441, 441);
+            txtHeight.Location = new Point(441, 442);
             txtHeight.Name = "txtHeight";
             txtHeight.Size = new Size(207, 23);
             txtHeight.TabIndex = 1;
@@ -87,14 +87,14 @@
             // txtWeight
             // 
             txtWeight.BorderStyle = BorderStyle.FixedSingle;
-            txtWeight.Location = new Point(441, 480);
+            txtWeight.Location = new Point(441, 481);
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(207, 23);
             txtWeight.TabIndex = 1;
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(441, 324);
+            dtpBirthDate.Location = new Point(441, 325);
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(207, 23);
             dtpBirthDate.TabIndex = 2;
@@ -102,7 +102,7 @@
             // txtUserName
             // 
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(441, 363);
+            txtUserName.Location = new Point(441, 364);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 23);
             txtUserName.TabIndex = 3;
@@ -110,7 +110,7 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(441, 402);
+            txtPassword.Location = new Point(441, 403);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(207, 23);
             txtPassword.TabIndex = 3;
@@ -131,7 +131,7 @@
             // 
             rbMale.AutoSize = true;
             rbMale.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rbMale.Location = new Point(562, 290);
+            rbMale.Location = new Point(562, 291);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(60, 23);
             rbMale.TabIndex = 4;
@@ -219,7 +219,7 @@
             // label9
             // 
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label9.Location = new Point(330, 121);
             label9.Name = "label9";
             label9.Size = new Size(318, 61);
@@ -238,6 +238,7 @@
             btnSignIn.TabIndex = 6;
             btnSignIn.Text = "Kayıt Ol";
             btnSignIn.UseVisualStyleBackColor = false;
+            btnSignIn.Click += btnSignIn_Click;
             // 
             // SignInForm
             // 
