@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NutriGenius.Data.Context;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,10 @@ namespace NutriGeniusForm
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
+            using (var db = new NutriGeniusDbContext())
+            {
 
+            }
         }
     }
 }

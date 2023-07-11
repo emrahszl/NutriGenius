@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignInForm));
             label1 = new Label();
             txtFirstName = new TextBox();
             txtLastName = new TextBox();
@@ -54,7 +55,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(330, 212);
+            label1.Location = new Point(426, 272);
             label1.Name = "label1";
             label1.Size = new Size(40, 19);
             label1.TabIndex = 0;
@@ -63,7 +64,7 @@
             // txtFirstName
             // 
             txtFirstName.BorderStyle = BorderStyle.FixedSingle;
-            txtFirstName.Location = new Point(441, 212);
+            txtFirstName.Location = new Point(537, 272);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(207, 23);
             txtFirstName.TabIndex = 1;
@@ -71,7 +72,7 @@
             // txtLastName
             // 
             txtLastName.BorderStyle = BorderStyle.FixedSingle;
-            txtLastName.Location = new Point(441, 251);
+            txtLastName.Location = new Point(537, 311);
             txtLastName.Name = "txtLastName";
             txtLastName.Size = new Size(207, 23);
             txtLastName.TabIndex = 1;
@@ -79,7 +80,7 @@
             // txtHeight
             // 
             txtHeight.BorderStyle = BorderStyle.FixedSingle;
-            txtHeight.Location = new Point(441, 442);
+            txtHeight.Location = new Point(537, 502);
             txtHeight.Name = "txtHeight";
             txtHeight.Size = new Size(207, 23);
             txtHeight.TabIndex = 1;
@@ -87,14 +88,14 @@
             // txtWeight
             // 
             txtWeight.BorderStyle = BorderStyle.FixedSingle;
-            txtWeight.Location = new Point(441, 481);
+            txtWeight.Location = new Point(537, 541);
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(207, 23);
             txtWeight.TabIndex = 1;
             // 
             // dtpBirthDate
             // 
-            dtpBirthDate.Location = new Point(441, 325);
+            dtpBirthDate.Location = new Point(537, 385);
             dtpBirthDate.Name = "dtpBirthDate";
             dtpBirthDate.Size = new Size(207, 23);
             dtpBirthDate.TabIndex = 2;
@@ -102,7 +103,7 @@
             // txtUserName
             // 
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
-            txtUserName.Location = new Point(441, 364);
+            txtUserName.Location = new Point(537, 424);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(207, 23);
             txtUserName.TabIndex = 3;
@@ -110,7 +111,7 @@
             // txtPassword
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Location = new Point(441, 403);
+            txtPassword.Location = new Point(537, 463);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(207, 23);
             txtPassword.TabIndex = 3;
@@ -119,7 +120,7 @@
             // 
             rbFemale.AutoSize = true;
             rbFemale.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rbFemale.Location = new Point(469, 290);
+            rbFemale.Location = new Point(565, 350);
             rbFemale.Name = "rbFemale";
             rbFemale.Size = new Size(61, 23);
             rbFemale.TabIndex = 4;
@@ -131,7 +132,7 @@
             // 
             rbMale.AutoSize = true;
             rbMale.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            rbMale.Location = new Point(562, 291);
+            rbMale.Location = new Point(658, 351);
             rbMale.Name = "rbMale";
             rbMale.Size = new Size(60, 23);
             rbMale.TabIndex = 4;
@@ -144,7 +145,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(330, 251);
+            label2.Location = new Point(426, 311);
             label2.Name = "label2";
             label2.Size = new Size(63, 19);
             label2.TabIndex = 0;
@@ -155,7 +156,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(330, 446);
+            label3.Location = new Point(426, 506);
             label3.Name = "label3";
             label3.Size = new Size(47, 19);
             label3.TabIndex = 0;
@@ -166,7 +167,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(330, 485);
+            label4.Location = new Point(426, 545);
             label4.Name = "label4";
             label4.Size = new Size(47, 19);
             label4.TabIndex = 0;
@@ -177,7 +178,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(330, 329);
+            label5.Location = new Point(426, 389);
             label5.Name = "label5";
             label5.Size = new Size(111, 19);
             label5.TabIndex = 0;
@@ -188,7 +189,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(330, 368);
+            label6.Location = new Point(426, 428);
             label6.Name = "label6";
             label6.Size = new Size(104, 19);
             label6.TabIndex = 0;
@@ -199,7 +200,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(330, 407);
+            label7.Location = new Point(426, 467);
             label7.Name = "label7";
             label7.Size = new Size(52, 19);
             label7.TabIndex = 0;
@@ -210,7 +211,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(330, 290);
+            label8.Location = new Point(426, 350);
             label8.Name = "label8";
             label8.Size = new Size(73, 19);
             label8.TabIndex = 0;
@@ -220,7 +221,7 @@
             // 
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(330, 121);
+            label9.Location = new Point(426, 181);
             label9.Name = "label9";
             label9.Size = new Size(318, 61);
             label9.TabIndex = 5;
@@ -232,7 +233,7 @@
             btnSignIn.BackColor = Color.Orange;
             btnSignIn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btnSignIn.ForeColor = Color.Black;
-            btnSignIn.Location = new Point(441, 525);
+            btnSignIn.Location = new Point(537, 585);
             btnSignIn.Name = "btnSignIn";
             btnSignIn.Size = new Size(207, 33);
             btnSignIn.TabIndex = 6;
@@ -244,7 +245,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.CommonBackgroundImage;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
             Controls.Add(btnSignIn);
