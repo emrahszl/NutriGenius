@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NutriGenius.Data.Context;
 
@@ -11,9 +12,10 @@ using NutriGenius.Data.Context;
 namespace NutriGenius.Data.Migrations
 {
     [DbContext(typeof(NutriGeniusDbContext))]
-    partial class NutriGeniusDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230711142140_Fifth")]
+    partial class Fifth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

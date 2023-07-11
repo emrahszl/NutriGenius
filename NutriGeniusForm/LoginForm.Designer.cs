@@ -33,7 +33,7 @@
             txtPassword = new TextBox();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
+            btnLogın = new Button();
             SuspendLayout();
             // 
             // label1
@@ -86,31 +86,31 @@
             label3.TabIndex = 2;
             label3.Text = "Şifre : ";
             // 
-            // button1
+            // btnLogın
             // 
-            button1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(494, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(164, 34);
-            button1.TabIndex = 3;
-            button1.Text = "Giriş Yap";
-            button1.UseVisualStyleBackColor = true;
+            btnLogın.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogın.Location = new Point(494, 415);
+            btnLogın.Name = "btnLogın";
+            btnLogın.Size = new Size(164, 34);
+            btnLogın.TabIndex = 3;
+            btnLogın.Text = "Giriş Yap";
+            btnLogın.UseVisualStyleBackColor = true;
             // 
-            // LogınForm
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.LogınForm;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
-            Controls.Add(button1);
+            Controls.Add(btnLogın);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(label1);
             DoubleBuffered = true;
-            Name = "LogınForm";
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "LogınForm";
             ResumeLayout(false);
@@ -124,6 +124,6 @@
         private TextBox txtPassword;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button btnLogın;
     }
 }

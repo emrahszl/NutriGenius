@@ -48,18 +48,19 @@
             label8 = new Label();
             label9 = new Label();
             btnSignIn = new Button();
+            cbMail = new ComboBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(426, 272);
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(352, 266);
             label1.Name = "label1";
-            label1.Size = new Size(40, 19);
+            label1.Size = new Size(80, 25);
             label1.TabIndex = 0;
-            label1.Text = "Ad : ";
+            label1.Text = "Ad (*) : ";
             // 
             // txtFirstName
             // 
@@ -105,7 +106,7 @@
             txtUserName.BorderStyle = BorderStyle.FixedSingle;
             txtUserName.Location = new Point(537, 424);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(207, 23);
+            txtUserName.Size = new Size(89, 23);
             txtUserName.TabIndex = 3;
             // 
             // txtPassword
@@ -144,84 +145,84 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(426, 311);
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(352, 305);
             label2.Name = "label2";
-            label2.Size = new Size(63, 19);
+            label2.Size = new Size(110, 25);
             label2.TabIndex = 0;
-            label2.Text = "Soyad : ";
+            label2.Text = "Soyad (*) : ";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(426, 506);
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(352, 500);
             label3.Name = "label3";
-            label3.Size = new Size(47, 19);
+            label3.Size = new Size(89, 25);
             label3.TabIndex = 0;
-            label3.Text = "Boy : ";
+            label3.Text = "Boy (*) : ";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(426, 545);
+            label4.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(352, 539);
             label4.Name = "label4";
-            label4.Size = new Size(47, 19);
+            label4.Size = new Size(89, 25);
             label4.TabIndex = 0;
-            label4.Text = "Kilo : ";
+            label4.Text = "Kilo (*) : ";
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(426, 389);
+            label5.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(352, 383);
             label5.Name = "label5";
-            label5.Size = new Size(111, 19);
+            label5.Size = new Size(175, 25);
             label5.TabIndex = 0;
-            label5.Text = "Doğum Tarihi : ";
+            label5.Text = "Doğum Tarihi (*) : ";
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(426, 428);
+            label6.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(352, 422);
             label6.Name = "label6";
-            label6.Size = new Size(104, 19);
+            label6.Size = new Size(165, 25);
             label6.TabIndex = 0;
-            label6.Text = "Kullanıcı Adı : ";
+            label6.Text = "Kullanıcı Adı (*) : ";
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(426, 467);
+            label7.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(352, 461);
             label7.Name = "label7";
-            label7.Size = new Size(52, 19);
+            label7.Size = new Size(96, 25);
             label7.TabIndex = 0;
-            label7.Text = "Şifre : ";
+            label7.Text = "Şifre (*) : ";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(426, 350);
+            label8.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(352, 344);
             label8.Name = "label8";
-            label8.Size = new Size(73, 19);
+            label8.Size = new Size(124, 25);
             label8.TabIndex = 0;
-            label8.Text = "Cinsiyet : ";
+            label8.Text = "Cinsiyet (*) : ";
             // 
             // label9
             // 
             label9.BackColor = Color.Transparent;
             label9.Font = new Font("Segoe UI", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(426, 181);
+            label9.Location = new Point(482, 174);
             label9.Name = "label9";
             label9.Size = new Size(318, 61);
             label9.TabIndex = 5;
@@ -241,6 +242,16 @@
             btnSignIn.UseVisualStyleBackColor = false;
             btnSignIn.Click += btnSignIn_Click;
             // 
+            // cbMail
+            // 
+            cbMail.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMail.FormattingEnabled = true;
+            cbMail.Items.AddRange(new object[] { "@hotmail.com", "@gmail.com", "@outlook.com", "@yahoo.com", "@yandex.com" });
+            cbMail.Location = new Point(632, 424);
+            cbMail.Name = "cbMail";
+            cbMail.Size = new Size(112, 23);
+            cbMail.TabIndex = 8;
+            // 
             // SignInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -248,6 +259,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(cbMail);
             Controls.Add(btnSignIn);
             Controls.Add(label9);
             Controls.Add(rbMale);
@@ -296,5 +308,6 @@
         private Label label8;
         private Label label9;
         private Button btnSignIn;
+        private ComboBox cbMail;
     }
 }
