@@ -12,14 +12,12 @@ namespace NutriGeniusForm
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            Form signInForm = new SignInForm();
-            signInForm.ShowDialog();
+            new SignInForm().ShowDialog();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form loginForm = new LoginForm();
-            loginForm.ShowDialog();
+            new LoginForm().ShowDialog();
         }
     }
 }

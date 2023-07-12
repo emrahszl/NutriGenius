@@ -57,7 +57,7 @@ namespace NutriGeniusForm
                         LastName = txtLastName.Text,
                         Gender = rbMale.Checked ? Gender.Male : Gender.Female,
                         BirthDate = dtpBirthDate.Value,
-                        UserName = txtUserName.Text,
+                        UserName = string.Join("", txtUserName.Text, cbMail.SelectedItem.ToString()),
                         Password = txtPassword.Text,
                         Height = Convert.ToInt32(txtHeight.Text),
                         Weight = Convert.ToDouble(txtWeight.Text)
@@ -65,7 +65,6 @@ namespace NutriGeniusForm
 
                     newUser.SignIn(newUser, db);
                     MessageBox.Show("Kayıt başarıyla tamamlandı.");
-                    Close();
                     OpenLoginForm();
                 }
                 catch (Exception ex)
@@ -94,8 +93,9 @@ namespace NutriGeniusForm
             }
         }
 
-        private static void OpenLoginForm()
+        private void OpenLoginForm()
         {
+            Close();
             new LoginForm().ShowDialog();
         }
     }

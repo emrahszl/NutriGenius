@@ -9,6 +9,6 @@ namespace NutriGenius.Data.Entities.SubClasses_Meal
 {
     public class Dinner : Meal
     {
-        public override string MealName => "Dinner";
+        public override string MealName => "Akşam Yemeği";
     }
 }

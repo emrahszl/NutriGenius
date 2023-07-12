@@ -95,6 +95,7 @@
             btnLogın.TabIndex = 3;
             btnLogın.Text = "Giriş Yap";
             btnLogın.UseVisualStyleBackColor = true;
+            btnLogın.Click += btnLogın_Click;
             // 
             // LoginForm
             // 

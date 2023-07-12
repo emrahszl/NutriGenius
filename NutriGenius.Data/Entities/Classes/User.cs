@@ -25,11 +25,11 @@ namespace NutriGenius.Data.Entities.Classes
 
         public string UserName { get; set; } = null!;
 
-        public string Password 
-        { 
+        public string Password
+        {
             get => _password;
 
-            set 
+            set
             {
                 if (value.Length < 60)
                 {
@@ -38,7 +38,7 @@ namespace NutriGenius.Data.Entities.Classes
                         throw new PasswordException();
                     }
                 }
-                
+
                 _password = value;
             }
         }
@@ -47,17 +47,17 @@ namespace NutriGenius.Data.Entities.Classes
 
         public string LastName { get; set; } = null!;
 
-        public DateTime BirthDate 
-        { 
+        public DateTime BirthDate
+        {
             get => _birthDate;
 
-            set 
-            { 
+            set
+            {
                 if ((DateTime.Now.Year - value.Year) < 15)
                 {
                     throw new AgeException();
                 }
-            } 
+            }
         }
 
         public Gender Gender { get; set; }
@@ -110,12 +110,10 @@ namespace NutriGenius.Data.Entities.Classes
             db.SaveChanges();
         }
 
-        public bool Login(string password, NutriGeniusDbContext db)
+        public bool Login(NutriGeniusDbContext db, string userName, string password)
         {
-            if (db.Users.Any(x => x.Password == Sha256(password)))
-            {
+            if (db.Users.Any(x => x.Password == Sha256(password) && x.UserName == userName))
                 return true;
-            }
 
             return false;
         }
