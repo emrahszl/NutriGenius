@@ -29,7 +29,7 @@ namespace NutriGenius.Data.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MealDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Calorie = table.Column<double>(type: "float", nullable: true),
+                    Calorie = table.Column<double>(type: "float", nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -45,7 +45,7 @@ namespace NutriGenius.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<double>(type: "float", nullable: false),
                     Unit = table.Column<int>(type: "int", nullable: false),
-                    Calorie = table.Column<double>(type: "float", nullable: true)
+                    Calorie = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -64,7 +64,7 @@ namespace NutriGenius.Data.Migrations
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
-                    Height = table.Column<double>(type: "float", nullable: false),
+                    Height = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>

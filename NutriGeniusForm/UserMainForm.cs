@@ -1,5 +1,8 @@
-﻿using NutriGenius.Data.Entities.AbstractClasses;
+﻿using Microsoft.EntityFrameworkCore;
+using NutriGenius.Data.Context;
+using NutriGenius.Data.Entities.AbstractClasses;
 using NutriGenius.Data.Entities.Classes;
+using NutriGenius.Data.Entities.SessionManager;
 using NutriGenius.Data.Entities.SubClasses_Meal;
 using System;
 using System.Collections.Generic;
@@ -15,11 +18,15 @@ namespace NutriGeniusForm
 {
     public partial class UserMainForm : Form
     {
+        NutriGeniusDbContext db = new NutriGeniusDbContext();
         private readonly User _currentUser;
+        User? dbUser;
+        Meal? currentMeal;
 
-        public UserMainForm(User currentUser)
+        public UserMainForm()
         {
-            _currentUser = currentUser;
+            _currentUser = SessionManager.CurrentUser;
+            dbUser = db.Users.Include(u => u.Meals).ThenInclude(m => m.Foods).ThenInclude(f => f.Portions).FirstOrDefault(u => u.UserName == _currentUser.UserName)!;
             InitializeComponent();
             ShowUserName();
         }
@@ -31,34 +38,53 @@ namespace NutriGeniusForm
 
         private void btnBreakfast_Click(object sender, EventArgs e)
         {
-            Meal breakfast = new Breakfast() { MealDate = DateTime.Now };
-            _currentUser.Meals.Add(breakfast);
-
-            new FoodForm(_currentUser, breakfast).ShowDialog();
+            try
+            {
+                currentMeal = new Breakfast() { MealDate = DateTime.Now.Date };
+                CheckMeal();
+                new FoodForm().ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnLunch_Click(object sender, EventArgs e)
         {
-            Meal lunch = new Lunch() { MealDate = DateTime.Now };
-            _currentUser.Meals.Add(lunch);
-
-            new FoodForm(_currentUser, lunch).ShowDialog();
+            currentMeal = new Lunch() { MealDate = DateTime.Now.Date };
+            CheckMeal();
+            new FoodForm().ShowDialog();
         }
 
         private void btnDinner_Click(object sender, EventArgs e)
         {
-            Meal dinner = new Dinner() {  MealDate = DateTime.Now };
-            _currentUser.Meals.Add(dinner);
-
-            new FoodForm(_currentUser, dinner ).ShowDialog();
+            currentMeal = new Dinner() { MealDate = DateTime.Now.Date };
+            CheckMeal();
+            new FoodForm().ShowDialog();
         }
 
         private void btnSnack_Click(object sender, EventArgs e)
         {
-            Meal snack = new Snack() { MealDate = DateTime.Now };
-            _currentUser.Meals.Add(snack);
+            currentMeal = new Snack() { MealDate = DateTime.Now.Date };
+            CheckMeal();
+            new FoodForm().ShowDialog();
+        }
 
-            new FoodForm(_currentUser, snack).ShowDialog();
+        private void CheckMeal()
+        {
+            bool shouldAddMeal = true;
+
+            if (dbUser!.Meals.Any(m => m.MealName.Equals(currentMeal!.MealName) && m.MealDate == currentMeal.MealDate))
+                shouldAddMeal = false;
+
+            if (shouldAddMeal)
+            {
+                dbUser.Meals.Add(currentMeal!);
+                db.SaveChanges();
+            }
+
+            SessionManager.CurrentMeal = dbUser!.Meals.FirstOrDefault(m => m.MealName == currentMeal!.MealName)!;
         }
     }
 }

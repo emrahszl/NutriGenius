@@ -75,7 +75,7 @@ namespace NutriGenius.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<double?>("Calorie")
+                    b.Property<double>("Calorie")
                         .HasColumnType("float");
 
                     b.Property<string>("Discriminator")
@@ -212,7 +212,7 @@ namespace NutriGenius.Data.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<double?>("Calorie")
+                    b.Property<double>("Calorie")
                         .HasColumnType("float");
 
                     b.Property<int>("Unit")

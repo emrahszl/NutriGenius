@@ -1,6 +1,8 @@
-﻿using NutriGenius.Data.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using NutriGenius.Data.Context;
 using NutriGenius.Data.Entities.AbstractClasses;
 using NutriGenius.Data.Entities.Classes;
+using NutriGenius.Data.Entities.SessionManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,88 +18,58 @@ namespace NutriGeniusForm
     public partial class FoodForm : Form
     {
         NutriGeniusDbContext db = new NutriGeniusDbContext();
-        private readonly User _currentUser;
-        private readonly Meal _selectedMeal;
+        Meal currentMeal = SessionManager.CurrentMeal;
 
-        public FoodForm(User currentUser, Meal selectedMeal)
+        public FoodForm()
         {
-            _currentUser = currentUser;
-            _selectedMeal = selectedMeal;
             InitializeComponent();
-            ListFoodCategories();
             ShowMealName();
+            ListFoodCategories();
         }
 
         private void ShowMealName()
         {
-            lblMealName.Text = _selectedMeal.MealName;
+            lblMealName.Text = currentMeal.MealName;
         }
 
         private void ListFoodCategories()
         {
-            cbFoodCategory.DataSource = null;
-            cbFoodCategory.DataSource = db.FoodCategories.ToList();
+            cbFoodCategory.Items.Clear();
+
+            foreach (FoodCategory foodCategory in db.FoodCategories)
+            {
+                cbFoodCategory.Items.Add(foodCategory);
+            }
         }
 
         private void cbFoodCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbFoodCategory.SelectedIndex == -1) return;
 
-            UpdateList();
-            CheckedControl();
+            ListFoods();
         }
 
-        private void CheckedControl()
+        private void cbFoods_SelectedIndexChanged(object sender, EventArgs e)
         {
-            clbFoods.ItemCheck -= clbFoods_ItemCheck!;
-
-            foreach (Food item in lstFoods.Items)
-            {
-                if (clbFoods.Items.Contains(item))
-                {
-                    int index = clbFoods.Items.IndexOf(item);
-                    clbFoods.SetItemCheckState(index, CheckState.Checked);
-                }
-            }
-
-            clbFoods.ItemCheck += clbFoods_ItemCheck!;
+            int selectedFood = ((Food)cbFoods.SelectedItem).Id;
+            cbPortions.DataSource = null;
+            cbPortions.DataSource = db.Foods.Find(selectedFood)!.Portions.ToList();
         }
 
-        private void clbFoods_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void ListFoods()
         {
-            Food food = (Food)clbFoods.SelectedItem;
-
-            if (e.NewValue == CheckState.Checked)
-            {
-                lstFoods.Items.Add(food);
-            }
-            else if (e.NewValue == CheckState.Unchecked)
-            {
-                lstFoods.Items.Remove(food);
-            }
+            cbFoods.DataSource = null!;
+            cbFoods.DataSource = db.Foods.Where(f => f.FoodCategoryId == ((FoodCategory)cbFoodCategory.SelectedItem).Id);
         }
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             new UserAddFoodForm().ShowDialog();
-            UpdateList();
-        }
-
-        private void UpdateList()
-        {
-            int foodCategoryId = ((FoodCategory)cbFoodCategory.SelectedItem).Id;
-
-            clbFoods.Items.Clear();
-
-            foreach (Food food in db.Foods.Where(f => f.FoodCategoryId == foodCategoryId))
-            {
-                clbFoods.Items.Add(food);
-            }
         }
 
         private void btnSaveFoods_Click(object sender, EventArgs e)
         {
-            if (lstFoods.Items.Count == 0) return;
+
         }
     }
 }

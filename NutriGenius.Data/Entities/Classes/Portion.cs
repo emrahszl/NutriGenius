@@ -15,7 +15,7 @@ namespace NutriGenius.Data.Entities.Classes
 
         public Unit Unit { get; set; }
 
-        public double? Calorie { get; set; }
+        public double Calorie { get; set; }
 
 
 

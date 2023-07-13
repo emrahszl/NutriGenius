@@ -54,6 +54,7 @@
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(164, 23);
             txtUserName.TabIndex = 1;
+            txtUserName.Text = "emrahs@hotmail.com";
             // 
             // txtPassword
             // 
@@ -61,6 +62,7 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(164, 23);
             txtPassword.TabIndex = 1;
+            txtPassword.Text = "123456eS.";
             // 
             // label2
             // 

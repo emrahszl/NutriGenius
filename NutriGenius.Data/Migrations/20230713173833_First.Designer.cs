@@ -12,8 +12,8 @@ using NutriGenius.Data.Context;
 namespace NutriGenius.Data.Migrations
 {
     [DbContext(typeof(NutriGeniusDbContext))]
-    [Migration("20230711125943_Thirth")]
-    partial class Thirth
+    [Migration("20230713173833_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -77,7 +77,7 @@ namespace NutriGenius.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<double?>("Calorie")
+                    b.Property<double>("Calorie")
                         .HasColumnType("float");
 
                     b.Property<string>("Discriminator")
@@ -214,7 +214,7 @@ namespace NutriGenius.Data.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<double?>("Calorie")
+                    b.Property<double>("Calorie")
                         .HasColumnType("float");
 
                     b.Property<int>("Unit")

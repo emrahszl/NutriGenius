@@ -1,5 +1,6 @@
 ﻿using NutriGenius.Data.Context;
 using NutriGenius.Data.Entities.Classes;
+using NutriGenius.Data.Entities.SessionManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,13 @@ namespace NutriGeniusForm
 {
     public partial class LoginForm : Form
     {
+        NutriGeniusDbContext db = new NutriGeniusDbContext();
+
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        User? loginUser;
         private void btnLogın_Click(object sender, EventArgs e)
         {
             string userName = txtUserName.Text;
@@ -31,19 +33,15 @@ namespace NutriGeniusForm
                 return;
             }
 
-            loginUser = new User();
 
-            using (var db = new NutriGeniusDbContext())
+            if (new User().Login(db, userName, password))
             {
-                if (loginUser.Login(db, txtUserName.Text, txtPassword.Text))
-                {
-                    loginUser = db.Users.FirstOrDefault(u => u.UserName == txtUserName.Text);
-                    new UserMainForm(loginUser!).ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
-                }
+                SessionManager.CurrentUser = db.Users.FirstOrDefault(u => u.UserName == userName)!;
+                new UserMainForm().ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Kullanıcı adı veya şifre hatalı!");
             }
         }
     }
