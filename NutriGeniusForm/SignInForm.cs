@@ -32,7 +32,7 @@ namespace NutriGeniusForm
                     string.IsNullOrEmpty(txtUserName.Text) ||
                     string.IsNullOrEmpty(txtPassword.Text) ||
                     (!rbMale.Checked && !rbFemale.Checked) ||
-                    dtpBirthDate.Value >= DateTime.Now ||
+                    dtpBirthDate.Value > DateTime.Now ||
                     string.IsNullOrEmpty(txtHeight.Text) ||
                     string.IsNullOrEmpty(txtWeight.Text) ||
                     cbMail.SelectedIndex == -1)
@@ -56,7 +56,7 @@ namespace NutriGeniusForm
                     FirstName = txtFirstName.Text,
                     LastName = txtLastName.Text,
                     Gender = rbMale.Checked ? Gender.Male : Gender.Female,
-                    BirthDate = dtpBirthDate.Value,
+                    BirthDate = dtpBirthDate.Value.Date,
                     UserName = string.Join("", txtUserName.Text, cbMail.SelectedItem.ToString()),
                     Password = txtPassword.Text,
                     Height = Convert.ToInt32(txtHeight.Text),

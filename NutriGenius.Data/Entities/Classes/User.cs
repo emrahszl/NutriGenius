@@ -57,6 +57,8 @@ namespace NutriGenius.Data.Entities.Classes
                 {
                     throw new AgeException();
                 }
+
+                _birthDate = value;
             }
         }
 

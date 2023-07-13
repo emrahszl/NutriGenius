@@ -21,5 +21,10 @@ namespace NutriGenius.Data.Entities.Classes
 
 
         public List<Food> Foods { get; set; } = new();
+
+        public override string ToString()
+        {
+            return Unit.ToString();
+        }
     }
 }

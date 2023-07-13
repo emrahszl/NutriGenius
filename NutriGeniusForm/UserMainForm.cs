@@ -38,16 +38,9 @@ namespace NutriGeniusForm
 
         private void btnBreakfast_Click(object sender, EventArgs e)
         {
-            try
-            {
-                currentMeal = new Breakfast() { MealDate = DateTime.Now.Date };
-                CheckMeal();
-                new FoodForm().ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            currentMeal = new Breakfast() { MealDate = DateTime.Now.Date };
+            CheckMeal();
+            new FoodForm().ShowDialog();
         }
 
         private void btnLunch_Click(object sender, EventArgs e)

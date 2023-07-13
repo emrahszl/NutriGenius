@@ -34,7 +34,6 @@
             txtLastName = new TextBox();
             txtHeight = new TextBox();
             txtWeight = new TextBox();
-            dtpBirthDate = new DateTimePicker();
             txtUserName = new TextBox();
             txtPassword = new TextBox();
             rbFemale = new RadioButton();
@@ -49,6 +48,7 @@
             label9 = new Label();
             btnSignIn = new Button();
             cbMail = new ComboBox();
+            dtpBirthDate = new DateTimePicker();
             SuspendLayout();
             // 
             // label1
@@ -93,14 +93,6 @@
             txtWeight.Name = "txtWeight";
             txtWeight.Size = new Size(207, 23);
             txtWeight.TabIndex = 1;
-            // 
-            // dtpBirthDate
-            // 
-            dtpBirthDate.Location = new Point(537, 385);
-            dtpBirthDate.Name = "dtpBirthDate";
-            dtpBirthDate.Size = new Size(207, 23);
-            dtpBirthDate.TabIndex = 2;
-            dtpBirthDate.Value = new DateTime(1993, 1, 4, 0, 0, 0, 0);
             // 
             // txtUserName
             // 
@@ -254,6 +246,13 @@
             cbMail.Size = new Size(112, 23);
             cbMail.TabIndex = 8;
             // 
+            // dtpBirthDate
+            // 
+            dtpBirthDate.Location = new Point(537, 385);
+            dtpBirthDate.Name = "dtpBirthDate";
+            dtpBirthDate.Size = new Size(207, 23);
+            dtpBirthDate.TabIndex = 9;
+            // 
             // SignInForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,6 +260,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
+            Controls.Add(dtpBirthDate);
             Controls.Add(cbMail);
             Controls.Add(btnSignIn);
             Controls.Add(label9);
@@ -268,7 +268,6 @@
             Controls.Add(rbFemale);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
-            Controls.Add(dtpBirthDate);
             Controls.Add(txtWeight);
             Controls.Add(txtHeight);
             Controls.Add(txtLastName);
@@ -296,7 +295,6 @@
         private TextBox txtLastName;
         private TextBox txtHeight;
         private TextBox txtWeight;
-        private DateTimePicker dtpBirthDate;
         private TextBox txtUserName;
         private TextBox txtPassword;
         private RadioButton rbFemale;
@@ -311,5 +309,6 @@
         private Label label9;
         private Button btnSignIn;
         private ComboBox cbMail;
+        private DateTimePicker dtpBirthDate;
     }
 }
