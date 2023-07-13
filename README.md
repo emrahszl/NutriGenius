@@ -1,1 +1,1 @@
-# NutriGenius
+# NutriGenius - Kalori Takip Uygulaması
