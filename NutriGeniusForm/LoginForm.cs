@@ -37,6 +37,7 @@ namespace NutriGeniusForm
             if (new User().Login(db, userName, password))
             {
                 SessionManager.CurrentUser = db.Users.FirstOrDefault(u => u.UserName == userName)!;
+
                 new UserMainForm().ShowDialog();
             }
             else

@@ -93,7 +93,10 @@ namespace NutriGenius.Data.Entities.Classes
                 _weight = value;
             }
         }
-        public List<Meal> Meals { get; set; } = new();
+
+
+
+        public List<UserMealFoodPortion> UserMealFoodPortions { get; set; } = new();
 
 
         private string Sha256(string password)

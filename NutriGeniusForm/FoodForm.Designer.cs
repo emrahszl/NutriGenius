@@ -174,9 +174,12 @@
             // nudPiece
             // 
             nudPiece.Location = new Point(44, 542);
+            nudPiece.Maximum = new decimal(new int[] { 2000, 0, 0, 0 });
+            nudPiece.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudPiece.Name = "nudPiece";
             nudPiece.Size = new Size(319, 23);
             nudPiece.TabIndex = 8;
+            nudPiece.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label6
             // 
@@ -258,6 +261,7 @@
             Name = "FoodForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "FoodForm";
+            FormClosing += FoodForm_FormClosing;
             ((System.ComponentModel.ISupportInitialize)nudPiece).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvFoods).EndInit();
             ResumeLayout(false);

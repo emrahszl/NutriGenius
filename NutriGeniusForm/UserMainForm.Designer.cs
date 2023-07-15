@@ -152,7 +152,8 @@
             // lblSumCalorie
             // 
             lblSumCalorie.BackColor = Color.Transparent;
-            lblSumCalorie.Font = new Font("Comic Sans MS", 14.8F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSumCalorie.Font = new Font("Book Antiqua", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSumCalorie.ForeColor = Color.Green;
             lblSumCalorie.Location = new Point(465, 112);
             lblSumCalorie.Name = "lblSumCalorie";
             lblSumCalorie.RightToLeft = RightToLeft.Yes;
@@ -187,6 +188,7 @@
             // lblBreakfast
             // 
             lblBreakfast.AutoSize = true;
+            lblBreakfast.ForeColor = Color.DarkCyan;
             lblBreakfast.Location = new Point(8, 42);
             lblBreakfast.Name = "lblBreakfast";
             lblBreakfast.Size = new Size(13, 15);
@@ -567,6 +569,7 @@
             // lblLunch
             // 
             lblLunch.AutoSize = true;
+            lblLunch.ForeColor = Color.DarkCyan;
             lblLunch.Location = new Point(8, 42);
             lblLunch.Name = "lblLunch";
             lblLunch.Size = new Size(13, 15);
@@ -635,6 +638,7 @@
             // lblDinner
             // 
             lblDinner.AutoSize = true;
+            lblDinner.ForeColor = Color.DarkCyan;
             lblDinner.Location = new Point(8, 42);
             lblDinner.Name = "lblDinner";
             lblDinner.Size = new Size(13, 15);
@@ -703,6 +707,7 @@
             // lblSnack
             // 
             lblSnack.AutoSize = true;
+            lblSnack.ForeColor = Color.DarkCyan;
             lblSnack.Location = new Point(8, 42);
             lblSnack.Name = "lblSnack";
             lblSnack.Size = new Size(13, 15);

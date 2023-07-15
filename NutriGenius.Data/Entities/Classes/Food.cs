@@ -24,7 +24,7 @@ namespace NutriGenius.Data.Entities.Classes
 
         public List<Portion> Portions { get; set; } = new();
 
-        public List<Meal> Meals { get; set; } = new();
+        public List<UserMealFoodPortion> UserMealFoodPortions { get; set; } = new();
 
 
         public override string ToString()
