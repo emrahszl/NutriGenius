@@ -20,6 +20,7 @@ namespace NutriGeniusForm
         NutriGeniusDbContext db = new NutriGeniusDbContext();
         User currentUser = SessionManager.CurrentUser;
         Meal currentMeal = SessionManager.CurrentMeal;
+
         List<UserMealFoodPortion> selectedUfs = new List<UserMealFoodPortion>();
 
         Food? food;
