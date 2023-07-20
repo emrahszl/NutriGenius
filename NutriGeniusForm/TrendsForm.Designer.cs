@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dgvTop5 = new DataGridView();
             pictureBox2 = new PictureBox();
             label6 = new Label();
             label5 = new Label();
@@ -40,29 +39,18 @@
             pictureBox1 = new PictureBox();
             lblName = new Label();
             label2 = new Label();
-            lstUserBreakfast = new ListBox();
-            lstAllUserBreakfast = new ListBox();
-            lstUserLunch = new ListBox();
-            lstAllUserLunch = new ListBox();
-            lstUserDinner = new ListBox();
-            lstAllUserDinner = new ListBox();
-            lstUserSnack = new ListBox();
-            lstAllUserSnack = new ListBox();
-            ((System.ComponentModel.ISupportInitialize)dgvTop5).BeginInit();
+            lblUserBreakfast = new Label();
+            lblAllUserBreakfast = new Label();
+            lblUserLunch = new Label();
+            lblAllUserLunch = new Label();
+            lblUserDinner = new Label();
+            lblAllUserDinner = new Label();
+            lblUserSnack = new Label();
+            lblAllUserSnack = new Label();
+            lstTop5 = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // dgvTop5
-            // 
-            dgvTop5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTop5.Location = new Point(31, 560);
-            dgvTop5.Margin = new Padding(3, 2, 3, 2);
-            dgvTop5.Name = "dgvTop5";
-            dgvTop5.RowHeadersWidth = 51;
-            dgvTop5.RowTemplate.Height = 29;
-            dgvTop5.Size = new Size(949, 158);
-            dgvTop5.TabIndex = 47;
             // 
             // pictureBox2
             // 
@@ -190,77 +178,86 @@
             label2.Text = "Diğer Kullanıcılar";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lstUserBreakfast
+            // lblUserBreakfast
             // 
-            lstUserBreakfast.FormattingEnabled = true;
-            lstUserBreakfast.ItemHeight = 15;
-            lstUserBreakfast.Location = new Point(146, 223);
-            lstUserBreakfast.Name = "lstUserBreakfast";
-            lstUserBreakfast.Size = new Size(201, 109);
-            lstUserBreakfast.TabIndex = 48;
+            lblUserBreakfast.BackColor = Color.Teal;
+            lblUserBreakfast.BorderStyle = BorderStyle.FixedSingle;
+            lblUserBreakfast.Location = new Point(146, 223);
+            lblUserBreakfast.Name = "lblUserBreakfast";
+            lblUserBreakfast.Size = new Size(201, 112);
+            lblUserBreakfast.TabIndex = 48;
             // 
-            // lstAllUserBreakfast
+            // lblAllUserBreakfast
             // 
-            lstAllUserBreakfast.FormattingEnabled = true;
-            lstAllUserBreakfast.ItemHeight = 15;
-            lstAllUserBreakfast.Location = new Point(146, 347);
-            lstAllUserBreakfast.Name = "lstAllUserBreakfast";
-            lstAllUserBreakfast.Size = new Size(201, 109);
-            lstAllUserBreakfast.TabIndex = 48;
+            lblAllUserBreakfast.BackColor = Color.Teal;
+            lblAllUserBreakfast.BorderStyle = BorderStyle.FixedSingle;
+            lblAllUserBreakfast.Location = new Point(146, 344);
+            lblAllUserBreakfast.Name = "lblAllUserBreakfast";
+            lblAllUserBreakfast.Size = new Size(201, 112);
+            lblAllUserBreakfast.TabIndex = 48;
             // 
-            // lstUserLunch
+            // lblUserLunch
             // 
-            lstUserLunch.FormattingEnabled = true;
-            lstUserLunch.ItemHeight = 15;
-            lstUserLunch.Location = new Point(357, 226);
-            lstUserLunch.Name = "lstUserLunch";
-            lstUserLunch.Size = new Size(201, 109);
-            lstUserLunch.TabIndex = 48;
+            lblUserLunch.BackColor = Color.Teal;
+            lblUserLunch.BorderStyle = BorderStyle.FixedSingle;
+            lblUserLunch.Location = new Point(357, 223);
+            lblUserLunch.Name = "lblUserLunch";
+            lblUserLunch.Size = new Size(201, 112);
+            lblUserLunch.TabIndex = 48;
             // 
-            // lstAllUserLunch
+            // lblAllUserLunch
             // 
-            lstAllUserLunch.FormattingEnabled = true;
-            lstAllUserLunch.ItemHeight = 15;
-            lstAllUserLunch.Location = new Point(357, 350);
-            lstAllUserLunch.Name = "lstAllUserLunch";
-            lstAllUserLunch.Size = new Size(201, 109);
-            lstAllUserLunch.TabIndex = 48;
+            lblAllUserLunch.BackColor = Color.Teal;
+            lblAllUserLunch.BorderStyle = BorderStyle.FixedSingle;
+            lblAllUserLunch.Location = new Point(357, 344);
+            lblAllUserLunch.Name = "lblAllUserLunch";
+            lblAllUserLunch.Size = new Size(201, 112);
+            lblAllUserLunch.TabIndex = 48;
             // 
-            // lstUserDinner
+            // lblUserDinner
             // 
-            lstUserDinner.FormattingEnabled = true;
-            lstUserDinner.ItemHeight = 15;
-            lstUserDinner.Location = new Point(568, 226);
-            lstUserDinner.Name = "lstUserDinner";
-            lstUserDinner.Size = new Size(201, 109);
-            lstUserDinner.TabIndex = 48;
+            lblUserDinner.BackColor = Color.Teal;
+            lblUserDinner.BorderStyle = BorderStyle.FixedSingle;
+            lblUserDinner.Location = new Point(568, 223);
+            lblUserDinner.Name = "lblUserDinner";
+            lblUserDinner.Size = new Size(201, 112);
+            lblUserDinner.TabIndex = 48;
             // 
-            // lstAllUserDinner
+            // lblAllUserDinner
             // 
-            lstAllUserDinner.FormattingEnabled = true;
-            lstAllUserDinner.ItemHeight = 15;
-            lstAllUserDinner.Location = new Point(568, 350);
-            lstAllUserDinner.Name = "lstAllUserDinner";
-            lstAllUserDinner.Size = new Size(201, 109);
-            lstAllUserDinner.TabIndex = 48;
+            lblAllUserDinner.BackColor = Color.Teal;
+            lblAllUserDinner.BorderStyle = BorderStyle.FixedSingle;
+            lblAllUserDinner.Location = new Point(568, 344);
+            lblAllUserDinner.Name = "lblAllUserDinner";
+            lblAllUserDinner.Size = new Size(201, 112);
+            lblAllUserDinner.TabIndex = 48;
             // 
-            // lstUserSnack
+            // lblUserSnack
             // 
-            lstUserSnack.FormattingEnabled = true;
-            lstUserSnack.ItemHeight = 15;
-            lstUserSnack.Location = new Point(779, 226);
-            lstUserSnack.Name = "lstUserSnack";
-            lstUserSnack.Size = new Size(201, 109);
-            lstUserSnack.TabIndex = 48;
+            lblUserSnack.BackColor = Color.Teal;
+            lblUserSnack.BorderStyle = BorderStyle.FixedSingle;
+            lblUserSnack.Location = new Point(779, 223);
+            lblUserSnack.Name = "lblUserSnack";
+            lblUserSnack.Size = new Size(201, 112);
+            lblUserSnack.TabIndex = 48;
             // 
-            // lstAllUserSnack
+            // lblAllUserSnack
             // 
-            lstAllUserSnack.FormattingEnabled = true;
-            lstAllUserSnack.ItemHeight = 15;
-            lstAllUserSnack.Location = new Point(779, 350);
-            lstAllUserSnack.Name = "lstAllUserSnack";
-            lstAllUserSnack.Size = new Size(201, 109);
-            lstAllUserSnack.TabIndex = 48;
+            lblAllUserSnack.BackColor = Color.Teal;
+            lblAllUserSnack.BorderStyle = BorderStyle.FixedSingle;
+            lblAllUserSnack.Location = new Point(779, 344);
+            lblAllUserSnack.Name = "lblAllUserSnack";
+            lblAllUserSnack.Size = new Size(201, 112);
+            lblAllUserSnack.TabIndex = 48;
+            // 
+            // lstTop5
+            // 
+            lstTop5.FormattingEnabled = true;
+            lstTop5.ItemHeight = 15;
+            lstTop5.Location = new Point(31, 555);
+            lstTop5.Name = "lstTop5";
+            lstTop5.Size = new Size(949, 154);
+            lstTop5.TabIndex = 49;
             // 
             // TrendsForm
             // 
@@ -269,15 +266,15 @@
             BackgroundImage = Properties.Resources.arasayfalar;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1008, 729);
-            Controls.Add(lstAllUserSnack);
-            Controls.Add(lstAllUserDinner);
-            Controls.Add(lstAllUserLunch);
-            Controls.Add(lstAllUserBreakfast);
-            Controls.Add(lstUserSnack);
-            Controls.Add(lstUserDinner);
-            Controls.Add(lstUserLunch);
-            Controls.Add(lstUserBreakfast);
-            Controls.Add(dgvTop5);
+            Controls.Add(lstTop5);
+            Controls.Add(lblAllUserSnack);
+            Controls.Add(lblAllUserDinner);
+            Controls.Add(lblAllUserLunch);
+            Controls.Add(lblAllUserBreakfast);
+            Controls.Add(lblUserSnack);
+            Controls.Add(lblUserDinner);
+            Controls.Add(lblUserLunch);
+            Controls.Add(lblUserBreakfast);
             Controls.Add(pictureBox2);
             Controls.Add(label2);
             Controls.Add(lblName);
@@ -293,7 +290,6 @@
             Name = "TrendsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "TrendsForm";
-            ((System.ComponentModel.ISupportInitialize)dgvTop5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -301,8 +297,6 @@
         }
 
         #endregion
-
-        private DataGridView dgvTop5;
         private PictureBox pictureBox2;
         private Label label6;
         private Label label5;
@@ -314,13 +308,14 @@
         private PictureBox pictureBox1;
         private Label lblName;
         private Label label2;
-        private ListBox lstUserBreakfast;
-        private ListBox lstAllUserBreakfast;
-        private ListBox lstUserLunch;
-        private ListBox lstAllUserLunch;
-        private ListBox lstUserDinner;
-        private ListBox lstAllUserDinner;
-        private ListBox lstUserSnack;
-        private ListBox lstAllUserSnack;
+        private Label lblUserBreakfast;
+        private Label lblAllUserBreakfast;
+        private Label lblUserLunch;
+        private Label lblAllUserLunch;
+        private Label lblUserDinner;
+        private Label lblAllUserDinner;
+        private Label lblUserSnack;
+        private Label lblAllUserSnack;
+        private ListBox lstTop5;
     }
 }

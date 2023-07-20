@@ -90,7 +90,6 @@ namespace NutriGeniusForm
 
         private void lvWater_DoubleClick(object sender, EventArgs e)
         {
-
             var lviClicked = lvWater.SelectedItems[0];
 
             if (lviClicked.ImageKey == "bosbardak")

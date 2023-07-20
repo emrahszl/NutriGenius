@@ -24,6 +24,7 @@ namespace NutriGeniusForm
             LoadData();
             InitializeComponent();
             ShowUserName();
+            Top5Food();
         }
 
         private void LoadData()
@@ -40,23 +41,34 @@ namespace NutriGeniusForm
             lblName.Text = currentUser.FirstName;
         }
 
+        private void Top5Food()
+        {
+            var foodIdList = db.UserMealFoodPortions.Include(uf => uf.Food).GroupBy(x => x.FoodId).OrderByDescending(x => x.Count()).Take(5).Select(uf => new
+            {
+                Ad = uf.FirstOrDefault()!.Food!.FoodName,
+                Adet = uf.Count()
+            });
+
+            foreach (var item in foodIdList)
+            {
+                lstTop5.Items.Add(item);
+            }
+        }
+
         private void AllUserFoods(int reportType)
         {
-            foreach (UserMealFoodPortion uf in FindUserMealFoodPortion("Kahvaltı", 1, reportType))
-            {
-                lstAllUserBreakfast.Items.Add(string.Join(" , ", uf.Food!.FoodName, FindUserMealFoodPortion("Kahvaltı", 1, reportType).Count(f => f.FoodId == uf.FoodId)));
-            }
-            lstAllUserLunch.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Öğle Yemeği", 1, reportType))));
-            lstAllUserDinner.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Akşam Yemeği", 1, reportType))));
-            lstAllUserSnack.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Ara Öğün", 1, reportType))));
+            lblAllUserBreakfast.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Kahvaltı", 1, reportType)));
+            lblAllUserLunch.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Öğle Yemeği", 1, reportType)));
+            lblAllUserDinner.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Akşam Yemeği", 1, reportType)));
+            lblAllUserSnack.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Ara Öğün", 1, reportType)));
         }
 
         private void UserFoods(int reportType)
         {
-            lstUserBreakfast.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Kahvaltı", 0, reportType))));
-            lstUserLunch.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Öğle Yemeği", 0, reportType))));
-            lstUserDinner.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Akşam Yemeği", 0, reportType))));
-            lstUserSnack.Items.Add(FindFoodName(FindFoodId(FindUserMealFoodPortion("Ara Öğün", 0, reportType))));
+            lblUserBreakfast.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Kahvaltı", 0, reportType)));
+            lblUserLunch.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Öğle Yemeği", 0, reportType)));
+            lblUserDinner.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Akşam Yemeği", 0, reportType)));
+            lblUserSnack.Text = FindFoodName(FindFoodId(FindUserMealFoodPortion("Ara Öğün", 0, reportType)));
         }
 
         private List<UserMealFoodPortion> FindUserMealFoodPortion(string mealName, int option, int reportType)
@@ -75,6 +87,7 @@ namespace NutriGeniusForm
                 {
                     ufs.AddRange(user.UserMealFoodPortions.Where(x => x.Meal!.MealName == mealName).Where(x => x.Meal!.MealDate > DateTime.Now.AddDays(dayNo) && x.Meal.MealDate.Day <= DateTime.Now.Day).ToList());
                 }
+
                 return ufs;
             }
         }
@@ -110,24 +123,14 @@ namespace NutriGeniusForm
 
         private void btnWeekly_Click(object sender, EventArgs e)
         {
-            ClearAllListBox();
             UserFoods(0);
             AllUserFoods(0);
         }
 
         private void mtnMonthly_Click(object sender, EventArgs e)
         {
-            ClearAllListBox();
             UserFoods(1);
             AllUserFoods(1);
-        }
-
-        private void ClearAllListBox()
-        {
-            foreach (ListBox listbox in Controls.OfType<ListBox>())
-            {
-                listbox.Items.Clear();
-            }
         }
     }
 }
