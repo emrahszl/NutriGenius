@@ -33,6 +33,8 @@ namespace NutriGeniusForm
                 .ThenInclude(uf => uf.Meal)
                 .Include(u => u.UserMealFoodPortions)
                 .ThenInclude(uf => uf.Food)
+                .Include(u => u.UserMealFoodPortions)
+                .ThenInclude(uf => uf.Portion)
                 .FirstOrDefault(u => u.Id == currentUser.Id)!;
         }
 
@@ -43,25 +45,44 @@ namespace NutriGeniusForm
                 listbox.Items.Clear();
             }
 
-            foreach (var item in currentUser!.UserMealFoodPortions.Where(x => x.Meal!.MealName == "Kahvaltı" && x.Meal.MealDate == dtpDate.Value.Date))
+            var userMeals = currentUser.UserMealFoodPortions.Where(uf => uf.Meal?.MealDate == dtpDate.Value.Date).ToList();
+
+            foreach (var item in userMeals!.Where(x => x.Meal!.MealName == "Kahvaltı"))
             {
-                lstBreakfast.Items.Add(item.Food!.FoodName);
+                lstBreakfast.Items.Add(string.Join(" - ", item.Food!.FoodName, item.Portion!.Calorie));
             }
 
-            foreach (var item in currentUser.UserMealFoodPortions.Where(x => x.Meal!.MealName == "Ara Öğün" && x.Meal.MealDate == dtpDate.Value.Date))
+            foreach (var item in userMeals.Where(x => x.Meal!.MealName == "Ara Öğün"))
             {
-                lstSnack.Items.Add(item.Food!.FoodName);
+                lstSnack.Items.Add(string.Join(" - ", item.Food!.FoodName, item.Portion!.Calorie));
             }
 
-            foreach (var item in currentUser.UserMealFoodPortions.Where(x => x.Meal!.MealName == "Öğle Yemeği" && x.Meal.MealDate == dtpDate.Value.Date))
+            foreach (var item in userMeals.Where(x => x.Meal!.MealName == "Öğle Yemeği"))
             {
-                lstLunch.Items.Add(item.Food!.FoodName);
+                lstLunch.Items.Add(string.Join(" - ", item.Food!.FoodName, item.Portion!.Calorie));
             }
 
-            foreach (var item in currentUser.UserMealFoodPortions.Where(x => x.Meal!.MealName == "Akşam Yemeği" && x.Meal.MealDate == dtpDate.Value.Date))
+            foreach (var item in userMeals.Where(x => x.Meal!.MealName == "Akşam Yemeği"))
             {
-                lstDinner.Items.Add(item.Food!.FoodName);
+                lstDinner.Items.Add(string.Join(" - ", item.Food!.FoodName, item.Portion!.Calorie));
             }
+
+            ShowMealCalorie(userMeals);
+        }
+
+        private void ShowMealCalorie(List<UserMealFoodPortion> userMeals)
+        {
+            if (userMeals.Count == 0)
+            {
+                lblBreakfastCalorie.Text = lblLunchCalorie.Text = lblDinnerCalorie.Text = lblSnackCalorie.Text = lblTotalMealCalorie.Text = userMeals.Count.ToString();
+                return;
+            }
+
+            lblBreakfastCalorie.Text = userMeals.FirstOrDefault(um => um.Meal?.MealName == "Kahvaltı")?.Meal?.Calorie.ToString();
+            lblLunchCalorie.Text = userMeals.FirstOrDefault(um => um.Meal?.MealName == "Öğle Yemeği")?.Meal?.Calorie.ToString();
+            lblDinnerCalorie.Text = userMeals.FirstOrDefault(um => um.Meal?.MealName == "Akşam Yemeği")?.Meal?.Calorie.ToString();
+            lblSnackCalorie.Text = userMeals.FirstOrDefault(um => um.Meal?.MealName == "Ara Öğün")?.Meal?.Calorie.ToString();
+            lblTotalMealCalorie.Text = userMeals.Sum(uf => uf.Portion!.Calorie * uf.Portion.Amount).ToString();
         }
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)

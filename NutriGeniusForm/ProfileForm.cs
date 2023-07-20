@@ -28,8 +28,6 @@ namespace NutriGeniusForm
 
         private void LoadPersonalInformations()
         {
-            lblName.Text = currentUser.FirstName;
-
             txtFirstName.Text = currentUser.FirstName;
             txtLastName.Text = currentUser.LastName;
             txtHeight.Text = currentUser.Height.ToString();

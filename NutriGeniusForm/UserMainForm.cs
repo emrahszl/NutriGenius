@@ -23,6 +23,7 @@ namespace NutriGeniusForm
         User? dbUser;
         Meal? currentMeal;
         List<UserMealFoodPortion>? userMeals;
+        double waterLiter;
 
         public UserMainForm()
         {
@@ -68,10 +69,9 @@ namespace NutriGeniusForm
 
         private void LoadGlasses()
         {
-            //Bardaklar tıklandıkça bir bir yüklenecek.
-
             lvWater.Items.Clear();
-            lblWater.Text = (dbUser!.TotalGlass * 0.2).ToString("F1");
+            waterLiter = dbUser!.TotalGlass * 0.2;
+            lblWater.Text = waterLiter.ToString("F1");
 
             for (int i = 0; i < 10; i++)
             {
@@ -84,11 +84,13 @@ namespace NutriGeniusForm
 
                 lvWater.Items.Add(lvi);
             }
+
+            GreetingControl(waterLiter);
         }
 
         private void lvWater_DoubleClick(object sender, EventArgs e)
         {
-            double waterLiter = dbUser!.TotalGlass * 0.2;
+
             var lviClicked = lvWater.SelectedItems[0];
 
             if (lviClicked.ImageKey == "bosbardak")
@@ -106,9 +108,13 @@ namespace NutriGeniusForm
                 dbUser!.TotalGlass--;
             }
 
-            lblGreeting.Visible = waterLiter >= 2 ? true : false;
-
+            GreetingControl(waterLiter);
             db.SaveChanges();
+        }
+
+        private void GreetingControl(double waterLiter)
+        {
+            lblGreeting.Visible = waterLiter >= 2 ? true : false;
         }
 
         private void btnBreakfast_Click(object sender, EventArgs e)

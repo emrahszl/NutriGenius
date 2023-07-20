@@ -39,14 +39,12 @@
             label4 = new Label();
             lblName = new Label();
             label2 = new Label();
-            pbProfile = new PictureBox();
             label3 = new Label();
             txtHeight = new TextBox();
             txtWeight = new TextBox();
             dtpBirthDate = new DateTimePicker();
             pbDaily = new PictureBox();
             pbTrends = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pbProfile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbDaily).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbTrends).BeginInit();
             SuspendLayout();
@@ -81,11 +79,11 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(145, 572);
+            label6.Location = new Point(121, 572);
             label6.Name = "label6";
-            label6.Size = new Size(77, 24);
+            label6.Size = new Size(130, 24);
             label6.TabIndex = 37;
-            label6.Text = "Günlük";
+            label6.Text = "Günlük Rapor";
             // 
             // label7
             // 
@@ -113,9 +111,9 @@
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI Semibold", 14F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(798, 572);
+            label8.Location = new Point(806, 572);
             label8.Name = "label8";
-            label8.Size = new Size(84, 25);
+            label8.Size = new Size(92, 25);
             label8.TabIndex = 34;
             label8.Text = "Trendler";
             // 
@@ -176,18 +174,6 @@
             label2.Text = "Doğum Tarihi:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // pbProfile
-            // 
-            pbProfile.BackColor = Color.White;
-            pbProfile.Image = Properties.Resources.user;
-            pbProfile.Location = new Point(138, 69);
-            pbProfile.Margin = new Padding(3, 2, 3, 2);
-            pbProfile.Name = "pbProfile";
-            pbProfile.Size = new Size(70, 62);
-            pbProfile.SizeMode = PictureBoxSizeMode.Zoom;
-            pbProfile.TabIndex = 30;
-            pbProfile.TabStop = false;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -241,9 +227,9 @@
             // pbTrends
             // 
             pbTrends.Image = Properties.Resources.barchart1;
-            pbTrends.Location = new Point(793, 501);
+            pbTrends.Location = new Point(801, 501);
             pbTrends.Name = "pbTrends";
-            pbTrends.Size = new Size(89, 62);
+            pbTrends.Size = new Size(97, 62);
             pbTrends.SizeMode = PictureBoxSizeMode.Zoom;
             pbTrends.TabIndex = 50;
             pbTrends.TabStop = false;
@@ -270,7 +256,6 @@
             Controls.Add(label4);
             Controls.Add(lblName);
             Controls.Add(label2);
-            Controls.Add(pbProfile);
             Controls.Add(label3);
             Controls.Add(txtHeight);
             Controls.Add(txtWeight);
@@ -278,7 +263,6 @@
             Name = "ProfileForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "ProfileForm";
-            ((System.ComponentModel.ISupportInitialize)pbProfile).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbDaily).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbTrends).EndInit();
             ResumeLayout(false);
@@ -298,7 +282,6 @@
         private Label label4;
         private Label lblName;
         private Label label2;
-        private PictureBox pbProfile;
         private Label label3;
         private TextBox txtHeight;
         private TextBox txtWeight;

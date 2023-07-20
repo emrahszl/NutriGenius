@@ -87,7 +87,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(12, 27);
+            label1.Location = new Point(34, 27);
             label1.Name = "label1";
             label1.Size = new Size(78, 21);
             label1.TabIndex = 0;
@@ -97,7 +97,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.happy__1_;
-            pictureBox1.Location = new Point(166, 19);
+            pictureBox1.Location = new Point(221, 19);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(42, 29);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -200,7 +200,7 @@
             lblProfileName.AutoSize = true;
             lblProfileName.BackColor = Color.Transparent;
             lblProfileName.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lblProfileName.Location = new Point(901, 121);
+            lblProfileName.Location = new Point(65, 130);
             lblProfileName.Name = "lblProfileName";
             lblProfileName.Size = new Size(43, 19);
             lblProfileName.TabIndex = 8;
@@ -210,7 +210,7 @@
             // 
             pbProfile.BackColor = Color.Transparent;
             pbProfile.Image = Properties.Resources.user;
-            pbProfile.Location = new Point(871, 68);
+            pbProfile.Location = new Point(37, 71);
             pbProfile.Name = "pbProfile";
             pbProfile.Size = new Size(103, 50);
             pbProfile.SizeMode = PictureBoxSizeMode.Zoom;
